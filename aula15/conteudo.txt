@@ -1,0 +1,33 @@
+Estruturas de Dados:
+    - Simples (variavel & constantes)
+    - Composta
+
+    Tipos: 
+        String: conjunto de caracteres (letras, numeros, simbolos)
+        Integer: Numeros inteiros
+        Float: Numeros quebrados
+        Boolean: Valores logicos (verdadeiro ou falso)
+
+Estruturas de Controle:
+    - Estrutura Sequencial
+    - Estruturas de Decisão
+        - Decisão Simples (IF)
+        - Decisão Composta (IF/ELSE)
+        - Decisão Encadeada (IF/ELSE/IF)
+        - Decisão Multipla Escolha (SWITCH)
+    - Estruturas de Repetição
+
+    Operadores relacionais:
+        = associação/atribuição
+        == comparação de igualdade
+        != comparação de diferença
+        && e, ou seja, conjução de condições
+        || ou, ou seja, ou uma condição ou outra
+
+        > maior que
+        < menor que
+        >= maior igual
+        <= menor igual
+
+
+Blocos reutilizáveis de código: (funções)
