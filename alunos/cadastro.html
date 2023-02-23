@@ -27,12 +27,12 @@
                 <img src="foto.svg" width="80%" alt="">
             </div>
             <div class="col">
-                <form action="">
+                <form action="" onsubmit="validar()">
                     <label for="nome">Nome</label>
-                    <input class="form-control mb-3" id="nome" placeholder="Digite aqui">
+                    <input onkeyup="alterarNome()" class="form-control mb-3 " id="nome" placeholder="Digite aqui">
 
                     <label for="email">Email</label>
-                    <input class="form-control mb-3" id="email" placeholder="Digite aqui">
+                    <input onkeyup="alterarEmail()" class="form-control mb-3" id="email" placeholder="Digite aqui">
 
                     <label for="telefone">Telefone</label>
                     <input class="form-control mb-3" id="telefone" placeholder="Digite aqui">
@@ -46,5 +46,7 @@
                 </form>
             </div>
         </section>
+
+        <script src="js/eventos.js"></script>
     </body>
 </html>
