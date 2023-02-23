@@ -1,10 +1,17 @@
 function alterarNome () {
-    nome.classList.remove('is-invalid');
+    let status = document.querySelector(".status");
+    // nome.classList.remove('is-invalid');
+    status.classList.add("bad");
+    status.classList.remove("ok");
 
     if (nome.value.length > 2) {
-        nome.classList.add('is-valid');
+        // nome.classList.add('is-valid');
+        status.classList.add("ok");
+        status.classList.remove("bad");
     } else {
-        nome.classList.add('is-invalid');
+        // nome.classList.add('is-invalid');
+        status.classList.remove("ok");
+        status.classList.add("bad");
     }
 }
 
