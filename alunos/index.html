@@ -13,6 +13,11 @@
         <div class="row mt-4 align-items-center">
             <div class="col">
                 <h1 class="text-start">Alunos Matriculados</h1>
+                
+                <div class="form-check form-switch ">
+                    <input onchange="ativarDarkmode()" id="dark" type="checkbox" class="form-check-input">
+                    <label for="dark" class="form-check-label">Modo Escuro</label>
+                </div>
             </div>
             <div class="col text-end">
                 <a href="cadastro.html" class="btn btn-outline-primary">
@@ -23,7 +28,7 @@
 
         <hr>
 
-        <table class="table table-hover table-striped">
+        <table id="tabela" class="table table-hover table-striped">
             <thead class="table-dark">
                 <tr>
                     <th>Nome</th>
@@ -76,5 +81,7 @@
                 </tr>
             </tbody>
         </table>
+
+        <script src="js/darkmode.js"></script>
     </body>
 </html>

@@ -6,51 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <style>
-            .input-form{
-                position: relative;
-            }
-            .input-form .status{
-                width: 30px;
-                height: 30px;
-                position: absolute;
-                bottom: 4px;
-                right: 0;
-            }
-            .input-form .status.ok,
-            .input-form .status.bad{
-                border-radius: 20px;
-                background-color: green;
-            }
-            .input-form .status.bad{
-                background-color: red;
-            }
-            .input-form .status.ok::after{
-                content: "";
-                width: 8px;
-                height: 4px;
-                position: absolute;
-                top: calc(50% - 2px);
-                left: calc(50% - 4px);
-                border: 1px solid transparent;
-                border-bottom-color: white;
-                border-left-color: white;
-                transform: rotate(-45deg);
-            }
-            .input-form .status.bad::after{
-                content: "x";
-                width: 30px;
-                line-height: 30px;
-                position: absolute;
-                text-align: center;
-                color: white;
-            }
-        </style>
     </head>
     <body class="container">
         <div class="row mt-4 align-items-center">
             <div class="col">
                 <h1 class="text-start">Novo Aluno</h1>
+            
+                <div class="form-check form-switch ">
+                    <input onchange="ativarDarkmode()" id="dark" type="checkbox" class="form-check-input">
+                    <label for="dark" class="form-check-label">Modo Escuro</label>
+                </div>
             </div>
             <div class="col text-end">
                 <a href="index.html" class="btn btn-outline-primary">
@@ -90,5 +55,6 @@
         </section>
 
         <script src="js/eventos.js"></script>
+        <script src="js/darkmode.js"></script>
     </body>
 </html>
