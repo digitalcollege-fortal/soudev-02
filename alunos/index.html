@@ -31,6 +31,7 @@
         <table id="tabela" class="table table-hover table-striped">
             <thead class="table-dark">
                 <tr>
+                    <th>#</th>
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Telefone</th>
@@ -38,50 +39,12 @@
                     <th>Ações</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Maria Chiquinha</td>
-                    <td>maria@email.com</td>
-                    <td>85 9 8787-1234</td>
-                    <td>Fortaleza-CE</td>
-                    <td>
-                        <button class="btn btn-warning">Editar</button>
-                        <button class="btn btn-danger">Excluir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Maria Chiquinha</td>
-                    <td>maria@email.com</td>
-                    <td>85 9 8787-1234</td>
-                    <td>Fortaleza-CE</td>
-                    <td>
-                        <button class="btn btn-warning">Editar</button>
-                        <button class="btn btn-danger">Excluir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Maria Chiquinha</td>
-                    <td>maria@email.com</td>
-                    <td>85 9 8787-1234</td>
-                    <td>Fortaleza-CE</td>
-                    <td>
-                        <button class="btn btn-warning">Editar</button>
-                        <button class="btn btn-danger">Excluir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Maria Chiquinha</td>
-                    <td>maria@email.com</td>
-                    <td>85 9 8787-1234</td>
-                    <td>Fortaleza-CE</td>
-                    <td>
-                        <button class="btn btn-warning">Editar</button>
-                        <button class="btn btn-danger">Excluir</button>
-                    </td>
-                </tr>
-            </tbody>
+            <tbody id="tabela-body"></tbody>
         </table>
 
         <script src="js/darkmode.js"></script>
+        <script>
+            listarAlunos();
+        </script>
     </body>
 </html>
