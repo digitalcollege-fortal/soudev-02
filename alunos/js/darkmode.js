@@ -38,7 +38,7 @@ function ativarDarkmode() {
 
     alterarCores();
 }
-
+    
 
 /////////////////// ARRAY DE OBJETOS ///////////////////////
 
