@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulário de Regiões, Estados e Cidades</title>
+  </head>
+  <body>
+    <form>
+      <label for="regiao">Região:</label>
+      <select id="regiao" name="regiao">
+        <option value="">Selecione uma região</option>
+        <option value="norte">Norte</option>
+        <option value="nordeste">Nordeste</option>
+        <option value="centro-oeste">Centro-Oeste</option>
+        <option value="sudeste">Sudeste</option>
+        <option value="sul">Sul</option>
+      </select>
+
+      <br />
+
+      <label for="estado">Estado:</label>
+      <select id="estado" name="estado" disabled>
+        <option value="">Selecione uma região primeiro</option>
+      </select>
+
+      <br />
+
+      <label for="cidade">Cidade:</label>
+      <select id="cidade" name="cidade" disabled>
+        <option value="">Selecione um estado primeiro</option>
+      </select>
+    </form>
+
+    <script>
+      const regiaoSelect = document.getElementById("regiao");
+      const estadoSelect = document.getElementById("estado");
+      const cidadeSelect = document.getElementById("cidade");
+
+      const estadosPorRegiao = {
+        norte: ["Amazonas", "Pará", "Rondônia", "Tocantins"],
+        nordeste: ["Alagoas", "Bahia", "Ceará", "Maranhão", "Paraíba", "Pernambuco", "Piauí", "Rio Grande do Norte", "Sergipe"],
+        "centro-oeste": ["Distrito Federal", "Goiás", "Mato Grosso", "Mato Grosso do Sul"],
+        sudeste: ["Espírito Santo", "Minas Gerais", "Rio de Janeiro", "São Paulo"],
+        sul: ["Paraná", "Rio Grande do Sul", "Santa Catarina"]
+      };
+
+      regiaoSelect.addEventListener("change", () => {
+        const selectedRegiao = regiaoSelect.value;
+
+        estadoSelect.innerHTML = `<option value="">Selecione um estado</option>`;
+        cidadeSelect.innerHTML = `<option value="">Selecione um estado primeiro</option>`;
+        estadoSelect.disabled = true;
+        cidadeSelect.disabled = true;
+
+        if (selectedRegiao) {
+          const estados = estadosPorRegiao[selectedRegiao];
+          estados.forEach(estado => {
+            const option = document.createElement("option");
+            option.value = estado;
+            option.text = estado;
+            estadoSelect.appendChild(option);
+          });
+
+          estadoSelect.disabled = false;
+        }
+      });
+
+      estadoSelect.addEventListener("change", () => {
+        const selectedEstado = estadoSelect.value;
+
+        cidadeSelect.innerHTML = `<option value="">Selecione uma cidade</option>`;
+        cidadeSelect.disabled = true;
+
+        if (selectedEstado) {
+          // Aqui você pode buscar as cidades do estado selecionado em uma API ou banco de dados, por exemplo.
+          // Como exemplo, vamos usar uma lista fixa de cidades.
+          const cidades = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Curitiba", "Porto Alegre", "Fortaleza", "Recife", "Salvador", "Brasília"];
+          cidades.forEach(cidade => {
+            const option = document.createElement("option");
+                option.value = cidade;
+                option.text = cidade;
+                cidadeSelect.appendChild(option);
+            });
+
+        cidadeSelect.disabled = false;
+    }
+  });
+</script>
