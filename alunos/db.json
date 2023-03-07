@@ -15,5 +15,13 @@
             "nome": "Abacate",
             "quantidade": 6
         }
+    ],
+    "alunos": [
+        {
+            "nome": "Gleidson teixeira",
+            "email": "gleidson@gmail.com",
+            "telefone": "987974616",
+            "cidade": "Fortaleza"
+        }
     ]
 }

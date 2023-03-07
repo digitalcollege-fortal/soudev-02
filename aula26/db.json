@@ -1,0 +1,76 @@
+{
+  "categorias": [
+    {
+      "id": 1,
+      "titulo": "Calças",
+      "descricao": "Calças de botar"
+    },
+    {
+      "id": 2,
+      "titulo": "Botinas",
+      "descricao": "Botas de calçar"
+    },
+    {
+      "titulo": "Sandalias",
+      "descricao": "Sandalias em geral",
+      "id": 3
+    },
+    {
+      "titulo": "Mouses",
+      "descricao": "Perifericos em geral",
+      "id": 4
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "categoria_id": 2,
+      "tamanho": "41",
+      "codigo": "10982-4",
+      "cor": "Preta",
+      "marca": "TheRua",
+      "descricao": "",
+      "valor": 59.9,
+      "titulo": "Bota cano alto",
+      "quantidade": 10,
+      "imagens": [
+        "imagem01.jpg",
+        "imagem02.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "categoria_id": 2,
+      "tamanho": "36",
+      "codigo": "12984-1",
+      "cor": "Marrom",
+      "marca": "West",
+      "descricao": "",
+      "valor": 259.9,
+      "titulo": "Bota cano baixo",
+      "quantidade": 10,
+      "imagens": [
+        "imagem12.jpg",
+        "imagem33.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "categoria_id": 1,
+      "tamanho": "39",
+      "codigo": "89814-1",
+      "cor": "Cinza",
+      "marca": "West",
+      "descricao": "",
+      "valor": 104.9,
+      "titulo": "Calça Jeans rasgada",
+      "quantidade": 24,
+      "imagens": [
+        "imagem99.jpg",
+        "imagem77.jpg",
+        "imagem78.jpg"
+      ]
+    }
+  ],
+  "clientes": []
+}
