@@ -1,0 +1,14 @@
+button{
+    background-color: transparent;
+    line-height: 40px;
+    padding: 0 26px;
+    border-radius: 5px;
+    border: 0;
+}
+.cheio{
+    background-color: blue;
+    color: white;
+}
+.vazio{
+    border: 2px solid blue;
+}
