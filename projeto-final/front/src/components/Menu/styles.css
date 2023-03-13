@@ -1,0 +1,12 @@
+.menu a {
+    text-decoration: none;
+    margin-left: 16px;
+    margin-right: 16px;
+    color: #474747;
+}
+
+.menu a:hover {
+    color: #C92071;
+    border-bottom: 2px solid #C92071;
+    border-radius: 5px;
+}
