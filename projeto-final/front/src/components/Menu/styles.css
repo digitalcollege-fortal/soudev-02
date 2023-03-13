@@ -7,6 +7,20 @@
 
 .menu a:hover {
     color: #C92071;
-    border-bottom: 2px solid #C92071;
-    border-radius: 5px;
+    border-bottom: 3px solid #C92071;
+    /* background-image: radial-gradient(circle, #C92071 3px, transparent 3px),
+                       linear-gradient(to right, #C92071, #C92071),
+                       radial-gradient(circle, #C92071 3px, transparent 3px);
+    background-repeat: no-repeat;
+    background-size: 6px 6px, calc(100% - 8px) 6px, 6px 6px;
+    background-position: left bottom, center bottom, right bottom;
+    outline: none;
+    border: none;
+    margin-top: 20px; */
+}
+
+.menu a.active {
+    color: #C92071;
+    font-weight: bold;
+    border-bottom: 3px solid #C92071;
 }
