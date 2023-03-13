@@ -4,8 +4,6 @@ import Home from "./pages/Home";
 import Produtos from "./pages/Produtos";
 import Categorias from "./pages/Categorias";
 import MeusPedidos from "./pages/MeusPedidos";
-import Navbar from "./components/Navbar";
-import Menu from "./components/Menu";
 
 import "./index.css";
 
@@ -13,8 +11,7 @@ export default function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar/>
-        <Menu/>
+        
 
         <Routes>
           <Route path="/" element={<Home/>} />
