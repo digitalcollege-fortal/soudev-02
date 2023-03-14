@@ -28,7 +28,6 @@ export default function Home() {
             <Menu />
             <Carousel />
             <ColecoesDestaque />
-            {listaProdutos.length}
             <Container>
                 <Grid container spacing={3}>
                     {
