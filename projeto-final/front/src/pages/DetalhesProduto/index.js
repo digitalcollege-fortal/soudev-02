@@ -1,4 +1,4 @@
-import { Card, Grid } from "@mui/material";
+import { Card, Grid, Stack } from "@mui/material";
 import { useParams } from "react-router-dom";
 
 import bone01 from "./img/bone01.webp";
@@ -8,6 +8,7 @@ import bone04 from "./img/bone04.webp";
 import bone05 from "./img/bone05.jpg";
 
 import React from "react";
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 
 export default function DetalhesProduto() {
     const {id} = useParams();
@@ -25,12 +26,27 @@ export default function DetalhesProduto() {
         return imagens.map((cada, posicao) => {
             return (
                 <Grid item xs={2.4}>
-                    <Card onClick={() => setAtual(posicao)}>
+                    <Card onClick={() => setAtual(posicao)} sx={(atual === posicao) && { border: "2px solid red"}}>
                         <img src={cada} width="100%"/>
                     </Card>
                 </Grid>
             );
         }); 
+    }
+
+    function anterior(){
+        if(atual === 0){
+            setAtual(imagens.length - 1);
+        }else{
+            setAtual(atual - 1);
+        }
+    }
+    function proximo(){
+        if(atual < imagens.length - 1){
+            setAtual(atual + 1);
+        }else{
+            setAtual(0)
+        }
     }
 
     return (
@@ -40,7 +56,16 @@ export default function DetalhesProduto() {
             <Grid container spacing={3}>
                 <Grid item xs={7}>
                     <Card align="center">
-                        <img width="400px" src={imagens[atual]}/>
+                        <Stack 
+                            direction="row" 
+                            sx={{
+                                justifyContent: "space-between",
+                                alignItems: "center"
+                                }}>
+                            <ChevronLeft sx={{fontSize: "60px"}} onClick={() => anterior()}/>
+                            <img width="400px" src={imagens[atual]}/>
+                            <ChevronRight sx={{fontSize: "60px"}} onClick={proximo} />
+                        </Stack>
                     </Card>
 
                     <Grid container spacing={2}>
