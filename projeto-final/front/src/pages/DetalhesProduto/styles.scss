@@ -1,0 +1,28 @@
+$color-yellow: #F6AA1C; 
+$color-gray: #666666;
+
+.product-details {
+    .title {
+        font-weight: bold;
+        font-size: 2rem; /* 32px */
+    }
+
+    .ref {
+        color: $color-gray;
+        font-size: 0.75rem;
+    }
+
+    .reviews svg {
+        color: $color-yellow;
+    }
+    
+    .buy, .buy:hover {
+        background-color: $color-yellow;
+    }
+
+    // img.main:hover {
+    //     transform: scale(2);
+    //     transition: 2s;
+    // }
+}
+

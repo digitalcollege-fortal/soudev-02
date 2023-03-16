@@ -7,7 +7,7 @@ export default function Navbar() {
     return (
         <div>
             <Favorite/>
-            <Group/>
+            <Group/>  
 
             <Badge color="primary" badgeContent={"4"}>
                 <ShoppingCart className="red"/>
