@@ -1,5 +1,6 @@
 import { Card, Grid, Stack } from "@mui/material";
 import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
 
 import bone01 from "./img/bone01.webp";
 import bone02 from "./img/bone02.jpg";
@@ -7,7 +8,6 @@ import bone03 from "./img/bone03.webp";
 import bone04 from "./img/bone04.webp";
 import bone05 from "./img/bone05.jpg";
 
-import React from "react";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 
 export default function DetalhesProduto() {
@@ -48,6 +48,10 @@ export default function DetalhesProduto() {
             setAtual(0)
         }
     }
+
+    // const [nome, setNome] = React.useState();
+
+    // useEffect(() => {}, []);
 
     return (
         <div>
