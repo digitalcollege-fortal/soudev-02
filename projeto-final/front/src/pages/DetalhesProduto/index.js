@@ -18,6 +18,7 @@ export default function DetalhesProduto() {
     const {id} = useParams();
     const [atual, setAtual] = React.useState(0);
     const [color, setColor] = React.useState('Todas as cores');
+    const [listaBones, setListaBones] = React.useState([]);
 
     const imagens = [
         bone01,
@@ -29,13 +30,13 @@ export default function DetalhesProduto() {
 
     const Items = () => {
         return imagens.map((cada, posicao) => {
-            return (
-                <Grid item xs={2.4}>
-                    <Card onClick={() => setAtual(posicao)} sx={(atual === posicao) && { border: "2px solid red"}}>
-                        <img src={cada} width="100%"/>
-                    </Card>
-                </Grid>
-            );
+                return (
+                    <Grid item xs={2.4}>
+                        <Card onClick={() => setAtual(posicao)} sx={(atual === posicao) && { border: "2px solid red"}}>
+                            <img src={cada} width="100%"/>
+                        </Card>
+                    </Grid>
+                );
         }); 
     }
 
@@ -54,11 +55,24 @@ export default function DetalhesProduto() {
         }
     }
 
-    React.useEffect(() => {
-        let intervalo = setInterval(proximo, 3000);
+    function buscarBones()
+    {
+        fetch("http://localhost:8000/bones")
+        .then(res => res.json())
+        .then(lista => {
+            setListaBones(lista);
+        })
+    }
 
-        return () => clearInterval(intervalo);
-    });
+    // React.useEffect(() => {
+    //     let intervalo = setInterval(proximo, 3000);
+
+    //     return () => clearInterval(intervalo);
+    // });
+
+    React.useEffect(() => {
+        buscarBones();
+    }, [])
 
     return (
         <div className="product-details">
@@ -76,7 +90,7 @@ export default function DetalhesProduto() {
                             <ChevronLeft sx={{fontSize: "60px"}} onClick={() => anterior()}/>
                             
                             {imagens.map((img, key) => (
-                                <div style={{display: key === atual?'block':'none'}} >
+                                <div  hidden={key !== atual}>
                                     <Zoom width={400} height={400} zoomScale={2} img={img}/>
                                 </div>
                             ))}
@@ -124,10 +138,10 @@ export default function DetalhesProduto() {
                     <div>
                         <p>Cor <small>{color}</small> </p>
                         
-                        <Fab onClick={() => setColor('Azul')} color="primary"></Fab>
-                        <Fab onClick={() => setColor('Roxo')} color="secondary"></Fab>
-                        <Fab onClick={() => setColor('Verde')} color="success"></Fab>
-                        <Fab onClick={() => setColor('Vermelho')} color="error"></Fab>
+                        <Fab sx={{width: "35px", height: "20px"}} onClick={() => setColor('Azul')} color="primary"></Fab>
+                        <Fab sx={{width: "35px", height: "20px"}} onClick={() => setColor('Roxo')} color="secondary"></Fab>
+                        <Fab sx={{width: "35px", height: "20px"}} onClick={() => setColor('Verde')} color="success"></Fab>
+                        <Fab sx={{width: "35px", height: "20px"}} onClick={() => setColor('Vermelho')} color="error"></Fab>
                     </div>
 
                     <Button className="buy" variant="contained"> COMPRAR </Button>

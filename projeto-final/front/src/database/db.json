@@ -1,0 +1,42 @@
+{
+    "bones": [
+        {
+            "azul": [
+                {
+                    "nome": "Nike",
+                    "preco": 299,
+                    "descricao": "algum texto aqui",
+                    "imagem": "https://static.netshoes.com.br/produtos/bone-dras-sarja-azul/08/FTL-0016-008/FTL-0016-008_zoom1.jpg?ts=1665405640&ims=326x"
+                },
+                {
+                    "nome": "Nike 2",
+                    "preco": 299,
+                    "descricao": "algum texto aqui",
+                    "imagem": "https://static.netshoes.com.br/produtos/bone-9fifty-original-fit-nba-denver-nuggets-team-color-aba-reta-snapback-azul-new-era/08/1XB-5145-008/1XB-5145-008_zoom1.jpg?ts=1615202056&ims=326x"
+                }
+            ]
+        },
+        {
+            "vermelho": [
+                {
+                    "nome": "Nike 3",
+                    "preco": 299,
+                    "descricao": "algum texto aqui",
+                    "imagem": "https://static.netshoes.com.br/produtos/bone-lacoste-aba-curva-strapback-masculino/16/D66-7628-016/D66-7628-016_zoom1.jpg?ts=1659531256&ims=326x"
+                },
+                {
+                    "nome": "Nike 4",
+                    "preco": 299,
+                    "descricao": "algum texto aqui",
+                    "imagem": "https://static.netshoes.com.br/produtos/bone-9forty-snapback-aba-curva-nba-toronto-raptors-street-aba-curva-snapback-vermelho-new-era/16/1XB-9398-016/1XB-9398-016_zoom1.jpg?ims=326x"
+                }
+            ]
+        },
+        {
+            "verde": []
+        },
+        {
+            "roxo": []
+        }
+    ]
+}
