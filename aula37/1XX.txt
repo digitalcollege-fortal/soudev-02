@@ -1,0 +1,19 @@
+1XX {
+    100 -> 199
+}
+
+2XX {
+    200 -> 299
+
+    200 -> ok
+    201 -> created
+    204 -> no content
+}
+
+400 {
+    400 -> 499
+
+    400 -> bad request
+    401 -> not authorized
+    404 -> not found
+}

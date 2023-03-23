@@ -13,18 +13,38 @@ const ENDERECO = 'localhost';
 function recepcao(req, res) {
     let resposta = "Pagina nao encontrada";
 
-    switch(req.url){
-        case "/clientes":
-            resposta = cliente.buscar();
-        break;
-        case "/produtos":
-            resposta = produto.buscar();
-        break;
-        case "/categorias":
-            resposta = categoria.buscar();
-        break;
+    // let routes = {
+    //     '/clientes': {
+    //         'GET': cliente.buscar,
+    //         'POST': cliente.cadastrar,
+    //     },
+    //     '/produtos': {
+    //         'GET': produto.buscar,
+    //         'POST': produto.cadastrar,
+    //     }
+    // }
 
-    }
+    // if (routes[req.url] !== undefined) {
+    //     resposta = routes[req.url][req.method]();
+    // }
+
+    // switch(req.url){
+    //     case "/clientes":
+    //         resposta = cliente.buscar();
+    //     break;
+    //     case "/produtos":
+    //         if (req.method === 'GET') {
+    //             resposta = produto.buscar();
+    //         } else if (req.method === 'POST') {
+    //             resposta = produto.cadastrar();
+    //         }
+
+    //         break;
+    //     case "/categorias":
+    //         resposta = categoria.buscar();
+    //     break;
+
+    // }
     res.end(resposta);
 }
 
