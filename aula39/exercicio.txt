@@ -1,0 +1,8 @@
+- Quero saber quantos alunos possuem a versao 01 do cartao;
+- Quero saber quantos alunos possuem a versao 02
+- Quero saber o nome e matricula dos alunos que possuem a versão cartao maior que 04
+- Quero a quantidade de todos os alunos que começam com FRANCISCO no nome
+- Quero a quantidade de todos os alunos que possuem o nome MARIA no nome
+- Quantos alunos foram alterados entre 2021 e 2022
+- Quais os nome, matricula e data dos alunos alterados em Janeiro de 2022;
+
