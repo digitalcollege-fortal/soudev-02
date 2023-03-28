@@ -61,3 +61,4 @@ FROM
 ON 
     tb_aluno.escola_id = tb_escola.id
 LIMIT 10;
+----------------------
