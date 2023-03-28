@@ -1,4 +1,8 @@
 - Quero saber quantos alunos possuem a versao 01 do cartao;
+
+Quantidade: 28518
+SELECT COUNT(*) AS quantidade FROM tb_aluno WHERE cartao_acesso_versao = 1;
+
 - Quero saber quantos alunos possuem a versao 02
 - Quero saber o nome e matricula dos alunos que possuem a versão cartao maior que 04
 - Quero a quantidade de todos os alunos que começam com FRANCISCO no nome
