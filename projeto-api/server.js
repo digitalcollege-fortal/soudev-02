@@ -3,6 +3,7 @@ const categoryRoutes = require("./resources/category/routes");
 
 const app = express();
 
+app.use(express.json());
 app.use(categoryRoutes);
 
 app.listen(8000, () => {

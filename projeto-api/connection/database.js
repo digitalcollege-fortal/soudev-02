@@ -4,7 +4,7 @@ async function execute(sql) {
     let conexao = await mysql2.createConnection({
         user: 'root',
         password: '1234',
-        database: 'db_escola_soudiva',
+        database: 'db_digital_store',
         host: 'localhost'        
     });
 
