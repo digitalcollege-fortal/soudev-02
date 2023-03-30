@@ -30,7 +30,7 @@ app.post('/escolas', async (req, res) => {
     `);
     
     dados.id = sql.insertId;
-    
+
     res.status(201).send(dados);
 })
 
@@ -40,6 +40,19 @@ app.delete('/escolas/:id', async (req, res) => {
     `);
 
     res.sendStatus(204);
+});
+
+app.put('/escolas/:id', async (req, res) => {
+    let dados = req.body; 
+
+    await database.execute(`
+        UPDATE tb_escola SET nome='${dados.nome}', endereco='${dados.endereco}'
+        WHERE id = '${req.params.id}'
+    `);
+    
+    dados.id = parseInt(req.params.id);
+
+    res.send(dados);
 });
 
 

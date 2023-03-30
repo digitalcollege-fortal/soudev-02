@@ -1,0 +1,17 @@
+{
+  "name": "aula36",
+  "version": "1.0.0",
+  "description": "",
+  "main": "categoria.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon servidor.js"
+  },
+  "author": "Gleidson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "nodemon": "^2.0.21"
+  }
+}
