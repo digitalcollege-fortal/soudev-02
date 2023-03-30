@@ -23,13 +23,15 @@ app.get('/escolas/:id', async (req, res) => {
 });
 
 app.post('/escolas', async (req, res) => {
+    let dados = req.body;
+
     let sql = await database.execute(`
         INSERT INTO tb_escola (nome, endereco) VALUES ('${req.body.nome}', '${req.body.endereco}');
     `);
-    let escola = await database.execute(`
-        SELECT * FROM tb_escola WHERE id = ${sql.insertId};
-    `);
-    res.status(201).send(JSON.stringify(escola[0]));
+    
+    dados.id = sql.insertId;
+    
+    res.status(201).send(dados);
 })
 
 app.delete('/escolas/:id', async (req, res) => {
