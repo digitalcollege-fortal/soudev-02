@@ -20,7 +20,7 @@ async function create(data){
         INSERT INTO ${table} (nome) VALUES ('${data.nome}');
     `);
     let category = await db.execute(`
-        SELECT * FROM ${table} WHERE ${sql.insertId};
+        SELECT * FROM ${table} WHERE id = ${sql.insertId};
     `);
     return JSON.stringify(category[0]);
 }
