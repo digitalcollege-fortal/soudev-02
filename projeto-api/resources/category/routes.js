@@ -18,6 +18,14 @@ app.put("/categories/:id", async (req, res) => {
     res.send(await controller.edit(req.params.id, req.body));
 })
 
+app.patch("/categories/:id", async (req, res) => {
+    res.send(await controller.disable(req.params.id));
+})
+
+app.delete("/categories/:id", async (req, res) => {
+    res.send(await controller.destroy(req.params.id));
+})
+
 
 
 

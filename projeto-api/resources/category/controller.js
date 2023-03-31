@@ -3,6 +3,13 @@ const table = "tb_category";
 
 async function listAll(){
     let lista = await db.execute(`
+        SELECT * FROM ${table} WHERE status = 0 OR status = 1;
+    `);
+    return JSON.stringify(lista);
+}
+
+async function listAllAdmin(){
+    let lista = await db.execute(`
         SELECT * FROM ${table};
     `);
     return JSON.stringify(lista);
@@ -43,9 +50,24 @@ async function edit(id, data){
     return JSON.stringify(lista[0]);
 }
 
+async function disable(id){
+    await db.execute(`
+        UPDATE ${table} SET status = 2 WHERE id = ${id};
+    `);
+}
+
+async function destroy(id){
+    await db.execute(`
+        DELETE FROM ${table} WHERE id = ${id};
+    `);
+}
+
 module.exports ={
     listAll,
+    listAllAdmin,
     listOne,
     create,
-    edit
+    disable,
+    edit,
+    destroy
 }
