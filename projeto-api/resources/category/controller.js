@@ -15,14 +15,25 @@ async function listOne(id){
     return JSON.stringify(lista[0]);
 }
 
+async function create(data){
+    let sql = await db.execute(`
+        INSERT INTO ${table} (nome) VALUES ('${data.nome}');
+    `);
+    let category = await db.execute(`
+        SELECT * FROM ${table} WHERE ${sql.insertId};
+    `);
+    return JSON.stringify(category[0]);
+}
+
 async function edit(id, data){
     let query = "";
     if(data.nome){
-        query = `nome = '${data.nome}'`
+        query = `nome = '${data.nome}',`;
     }
     if(data.status){
-        query += `, status = ${data.status}`
+        query += `status = ${data.status},`;
     }
+    query += `updated_at = '${data.updated_at}'`;
     await db.execute(`
         UPDATE ${table} SET ${query} WHERE ${id};
     `);
@@ -35,5 +46,6 @@ async function edit(id, data){
 module.exports ={
     listAll,
     listOne,
+    create,
     edit
 }
