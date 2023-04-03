@@ -32,11 +32,25 @@ app.post('/banners', async (req, res) => {
 });
 
 app.put('/banners/:id', async (req, res) => {
-    res.send('ok');
+    let dados = req.body;
+
+    await database.execute(`
+        UPDATE tb_banner SET
+            titulo='${req.body.titulo}',
+            descricao='${req.body.descricao}',
+            imagem='${req.body.imagem}'
+        WHERE id='${req.params.id}'
+    `);
+
+    dados.id = req.params.id;
+
+    res.send(dados);
 });
 
 app.delete('/banners/:id', async (req, res) => {
-    res.send('ok');
+    await database.execute(`DELETE FROM tb_banner WHERE id='${req.params.id}'`)
+
+    res.sendStatus(204);
 });
 
 
