@@ -4,13 +4,16 @@
 const app = require('express').Router();
 const database = require('../../connection/database');
 
-app.get('/banners', async (req, res) => {
-    let dados = await database.execute(`SELECT * FROM tb_banner`);
+const TABLE_NAME = 'tb_banner';
+const BASE_URL = '/banners';
+
+app.get(BASE_URL, async (req, res) => {
+    let dados = await database.execute(`SELECT * FROM ${TABLE_NAME}`);
 
     res.send(dados);
 });
 
-app.get('/banners/:id', async (req, res) => {
+app.get(`${BASE_URL}/:id`, async (req, res) => {
     let dados = await database.execute(`
         SELECT * FROM tb_banner WHERE id='${req.params.id}'
     `);
@@ -18,7 +21,7 @@ app.get('/banners/:id', async (req, res) => {
     res.send(dados[0]);
 });
 
-app.post('/banners', async (req, res) => {
+app.post(BASE_URL, async (req, res) => {
     let corpo = req.body;
 
     let sql = await database.execute(`
@@ -31,7 +34,7 @@ app.post('/banners', async (req, res) => {
     res.send(corpo);
 });
 
-app.patch('/banners/:id', async (req, res) => {
+app.patch(`${BASE_URL}/:id`, async (req, res) => {
     let dados = req.body;
 
     let jaExiste = await database.execute(`
@@ -57,7 +60,7 @@ app.patch('/banners/:id', async (req, res) => {
     res.send(dados);
 });
 
-app.delete('/banners/:id', async (req, res) => {
+app.delete(`${BASE_URL}/:id`, async (req, res) => {
     await database.execute(`DELETE FROM tb_banner WHERE id='${req.params.id}'`)
 
     res.sendStatus(204);
