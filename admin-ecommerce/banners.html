@@ -242,6 +242,10 @@
     <!-- End Navbar -->
 
     <section class="card card-body m-4">
+        <h3 class="d-flex justify-content-between">
+            <span>Banners</span>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Novo banner</button>
+        </h3>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -258,6 +262,29 @@
 
   </main>
 
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasRightLabel">Criar</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form id="formCriar" onsubmit="adicionar()">
+            <div class="input-group input-group-dynamic mb-3">
+                <label for="titulo" class="form-label">Titulo</label>
+                <input type="text" name="titulo" id="titulo" class="form-control" required>
+            </div>
+            <div class="input-group input-group-dynamic mb-3">
+                <label for="decricao" class="form-label">Descrição</label>
+                <textarea name="descricao" id="descricao" class="form-control"></textarea>
+            </div>
+            <div class="input-group input-group-dynamic mb-3">
+                <input type="file" name="imagem" id="imagem" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+        </form>
+    </div>
+  </div>
+
   <script src="banners.js"></script>
 
   <!--   Core JS Files   -->
@@ -266,7 +293,7 @@
   <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="assets/js/plugins/chartjs.min.js"></script>
-  <script>
+  <!-- <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
     new Chart(ctx, {
@@ -512,7 +539,7 @@
         },
       },
     });
-  </script>
+  </script> -->
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {

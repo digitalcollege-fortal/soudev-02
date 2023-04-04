@@ -1,13 +1,7 @@
-function remover(id) {
-    fetch('http://localhost:8000/banners/'+id, {
-        method: 'DELETE'
-    });
+// const { event } = require("cypress/types/jquery");
 
-    alert('Pronto, banner excluido');
-    location.href="banners.html";
-}
-
-fetch('http://localhost:8000/banners')
+function listarTodos(){
+    fetch('http://localhost:8000/banners')
     .then(res => res.json())
     .then(dados => {
         dados.map(cada => {
@@ -27,3 +21,37 @@ fetch('http://localhost:8000/banners')
             `;  
         })
     });
+} listarTodos();
+
+
+function adicionar()
+{
+    event.preventDefault();
+    let banner = {
+        titulo: titulo.value,
+        descricao: descricao.value,
+        imagem: imagem.value
+    }
+
+    fetch('http://localhost:8000/banners/', {
+        headers:{
+            'Content-type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify(banner)
+    })
+    .then(res => res.json())
+    .then(() => {
+        listarTodos();
+    })
+
+}
+
+function remover(id) {
+    fetch('http://localhost:8000/banners/'+id, {
+        method: 'DELETE'
+    });
+
+    alert('Pronto, banner excluido');
+    location.href="banners.html";
+}
