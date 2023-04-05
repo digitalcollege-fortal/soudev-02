@@ -8,6 +8,11 @@ const TABLE_NAME = 'tb_banner';
 const BASE_URL = '/banners';
 
 app.get(BASE_URL, async (req, res) => {
+    if (req.headers.senha !== '4246') {
+        res.sendStatus(401);
+        return;
+    }
+
     let dados = await database.execute(`SELECT * FROM ${TABLE_NAME}`);
 
     res.send(dados);
