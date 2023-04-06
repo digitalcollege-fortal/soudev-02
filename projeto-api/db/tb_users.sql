@@ -7,3 +7,6 @@ CREATE TABLE tb_users (
 
 ALTER TABLE tb_users
 ADD COLUMN email varchar(100);
+
+ALTER TABLE tb_users MODIFY COLUMN senha VARCHAR(255);
+ 
