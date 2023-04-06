@@ -4,6 +4,7 @@ function listarTodos(){
     fetch('http://localhost:8000/banners')
     .then(res => res.json())
     .then(dados => {
+        tabela_banners.innerHTML = "";
         dados.map(cada => {
             tabela_banners.innerHTML += `
                 <tr>
