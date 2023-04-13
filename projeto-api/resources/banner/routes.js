@@ -4,6 +4,8 @@
 const app = require('express').Router();
 const database = require('../../connection/database');
 
+const repository = require('./repository');
+
 const TABLE_NAME = 'tb_banner';
 const BASE_URL = '/banners';
 
@@ -24,15 +26,15 @@ const pessoasAutorizadas = [
 
 app.get(BASE_URL, async (req, res) => {
     //filtrar apenas a(s) pessoa(s) que possuem aquele token
-    let verificadas = pessoasAutorizadas.filter(
-        cada => cada.token === req.headers.token
-    );
+    // let verificadas = pessoasAutorizadas.filter(
+    //     cada => cada.token === req.headers.token
+    // );
     
-    //se nao existir ninguem com aquele token, entao é "acesso nao autorizado"
-    if (verificadas.length === 0) {
-        res.sendStatus(401);
-        return;
-    }
+    // //se nao existir ninguem com aquele token, entao é "acesso nao autorizado"
+    // if (verificadas.length === 0) {
+    //     res.sendStatus(401);
+    //     return;
+    // }
 
     let dados = await database.execute(`SELECT * FROM ${TABLE_NAME}`);
 
@@ -51,12 +53,7 @@ app.get(`${BASE_URL}/:id`, async (req, res) => {
 app.post(BASE_URL, async (req, res) => {
     let corpo = req.body;
 
-    let sql = await database.execute(`
-        INSERT INTO tb_banner (titulo, descricao, imagem)
-        VALUES ('${corpo.titulo}', '${corpo.descricao}', '${corpo.imagem}')
-    `);
-
-    corpo.id = sql.insertId;
+    corpo.id = await repository.inserir(corpo);
     
     res.send(corpo);
 });
