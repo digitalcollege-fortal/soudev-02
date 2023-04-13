@@ -16,7 +16,11 @@ app.get("/categories", async (req, res) => {
 })
 
 app.get("/categories/:id", async (req, res) => {
-    res.send(await controller.listOne(req.params.id));
+    try {
+        res.send(await controller.listOne(req.params.id));
+    } catch (error) {
+        res.status(400).send(error.message)
+    }
 })
 
 app.post("/categories", async (req, res) => {

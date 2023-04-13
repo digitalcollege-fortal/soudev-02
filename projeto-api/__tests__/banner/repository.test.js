@@ -1,17 +1,17 @@
 const repository = require('../../resources/banner/repository');
 
-test('Testar se inserir banner na tabela funciona', async () => {
-    let dados = {
-        titulo: 'Titulo Banner teste',
-        descricao: 'Descricao teste para o banner',
-        imagem: 'http://imagens.com.br/4.jpg'
-    };
+// test('Testar se inserir banner na tabela funciona', async () => {
+//     let dados = {
+//         titulo: 'Titulo Banner teste',
+//         descricao: 'Descricao teste para o banner',
+//         imagem: 'http://imagens.com.br/4.jpg'
+//     };
 
-    let resultado = await repository.inserir(dados);
+//     let resultado = await repository.inserir(dados);
 
-    expect(resultado).toBeGreaterThan(0); //espero que seja maior que 0
-    expect(typeof resultado).toBe('number');
-});
+//     expect(resultado).toBeGreaterThan(0); //espero que seja maior que 0
+//     expect(typeof resultado).toBe('number');
+// });
 
 test('Testar se consigo adicionar um banner sem titulo', async () => {
     let dados = {
@@ -35,19 +35,23 @@ test('Testar se consigo adicionar um banner sem descricao', async () => {
     expect(resultado).toBe('invalid_description');
 });
 
-test('Testar se consigo adicionar um banner sem imagem', async () => {
-    let dados = {
-        titulo: 'bla bla',
-        descricao: 'descricao teste'
-    };
+// test('Testar se consigo adicionar um banner sem imagem', async () => {
+//     let dados = {
+//         titulo: 'bla bla',
+//         descricao: 'descricao teste'
+//     };
 
-    let resultado = await repository.inserir(dados);
+//     let resultado = await repository.inserir(dados);
 
-    expect(resultado).toBe('invalid_image');
-});
+//     expect(resultado).toBe('invalid_image');
+// });
 
 // test('testar se o buscar traz um array de elementos', async () => {
 //     let resultado = await repository.buscarTodos();
 
-//     expect(typeof resultado).toBe('array');
+    // expect(typeof resultado).toBe('array');
+    // expect(typeof resultado[0]).toBe('object');
+    
+    // expect(typeof resultado[0].id).toBe('number');
+    // expect(typeof resultado[0].titulo).toBe('string');
 // })

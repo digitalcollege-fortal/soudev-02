@@ -3,7 +3,7 @@ const table = "tb_category";
 
 async function listAll(){
     let lista = await db.execute(`
-        SELECT * FROM ${table} WHERE status = 0 OR status = 1;
+        SELECT * FROM ${table};
     `);
     return JSON.stringify(lista);
 }

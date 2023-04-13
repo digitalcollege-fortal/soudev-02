@@ -9,6 +9,10 @@ async function inserir (dados) {
         return "invalid_description";
     }
 
+    if (!dados.imagem) {
+        return "invalid_image";
+    }
+
     let sql = await database.execute(`
         INSERT INTO tb_banner (titulo, descricao, imagem)
         VALUES ('${dados.titulo}', '${dados.descricao}', '${dados.imagem}')
@@ -16,6 +20,8 @@ async function inserir (dados) {
 
     return sql.insertId;
 }
+
+
 
 module.exports = {
     inserir,
