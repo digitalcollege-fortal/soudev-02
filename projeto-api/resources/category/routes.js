@@ -3,7 +3,16 @@ const app = express.Router();
 const controller = require("./controller");
 
 app.get("/categories", async (req, res) => {
-    res.send(await controller.listAll());
+    try {
+        res.send(await controller.listAll());
+    } catch (error) {
+        let er = {
+            error: error,
+            status: 404,
+            message: error.message
+        }
+        res.send(er)
+    }
 })
 
 app.get("/categories/:id", async (req, res) => {
